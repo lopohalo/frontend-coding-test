@@ -20,21 +20,12 @@ const Tarea = ({ tarea, setTareaEditar, setTrayendoTareas, trayendoTareas,setLey
       switchedBoton = trayendoTareas.filter(element => element.id == tarea.id ? tarea.completed = true : null)
       console.log(switchedBoton)
     } else {
-      switchedBoton = trayendoTareas.filter(element => element.id == tarea.id ? tarea.completed = 'false' : null)
+      switchedBoton = trayendoTareas.filter(element => element.id == tarea.id ? tarea.completed = false : null)
       console.log(switchedBoton)
     }
   
     switchedBoton = switchedBoton[0]
    
-    let arregloNuevo = trayendoTareas.filter(element => element.id == tarea.id ? switchedBoton : element)
-    const respuesta = await fetch(`http://localhost:3001/tasks/${tarea.id}`, {
-      method: 'PUT',
-      body: JSON.stringify(arregloNuevo),
-      headers: { 'Content-Type': 'application/json' }
-  })
-  await respuesta.json()
-  setLeyendoCambios('1')
-
     setEstado(!estado)
   }
   return (
@@ -66,7 +57,7 @@ const Tarea = ({ tarea, setTareaEditar, setTrayendoTareas, trayendoTareas,setLey
 
           <input type="checkbox" onClick={() => observandoComportamiento(tarea)} name={tarea.id} id={tarea.id} className="switch-button__checkbox" />
           <label htmlFor={tarea.id} className="switch-button__label"></label><br />
-          <h1 className="font-bold">{completed == "false" ? 'No completada' : 'Completada'}</h1>
+          <h1 className="font-bold">{completed == true ? 'No Completada' : 'Completada'}</h1>
         </div>
 
         {/* <button type="button" onClick={HandleSubmitEliminar} className="font-bold text-white bg-red-500 hover:bg-red-700 uppercase py-2 px-10 rounded-lg">eliminar</button> */}

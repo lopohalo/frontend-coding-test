@@ -23,7 +23,7 @@ const ListadoTareas = ({ cliente }) => {
     useEffect(() => {
         let filtro = trayendoTareas.filter(element => element.personId == cliente.id)
         setTareasFiltradas(filtro)
-    }, [leyendoCambios,trayendoTareas])
+    }, [leyendoCambios, trayendoTareas])
 
     // const eliminarAlgoDelArreglo = id => {
     //     let eliminandoGlobal = trayendoTareas.filter(element => element.id !== id)
