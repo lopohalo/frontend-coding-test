@@ -24,6 +24,7 @@ const router = useRouter()
             return random + fecha;
         }
         const objeto_carta = {
+            usuarioCreador: cliente.id,
             title,
             nombrePropietario,
             description,

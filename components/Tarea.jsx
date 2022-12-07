@@ -1,10 +1,10 @@
 import { useState } from "react"
 import { useRouter } from 'next/router'
-const Tarea = ({ tarea, setTareaEditar, setTrayendoTareas, trayendoTareas, setLeyendoCambios ,cliente}) => {
+const Tarea = ({ tarea, setTareaEditar, setTrayendoTareas, trayendoTareas,setLeyendoCambios }) => {
   const [estado, setEstado] = useState('No completada')
   const { title,
     nombrePropietario,
-    description, completed, startDate, endDate } = tarea
+    description, completed, startDate,endDate } = tarea
 
   // const HandleSubmitEliminar = () => {
   //   const res = confirm('Are you sure you want')
@@ -13,44 +13,19 @@ const Tarea = ({ tarea, setTareaEditar, setTrayendoTareas, trayendoTareas, setLe
   //   }
   // }
   const router = useRouter()
-  const observandoComportamiento =  async(tarea) => {
-    console.log(tarea.completed)
-    let obj
-    if (tarea.completed === false) {
-      obj = {
-        tittle: tarea.tittle,
-        nombrePropietario: tarea.nombrePropietario,
-        description: tarea.description,
-        completed: true,
-        startDate: tarea.startDate,
-        endDate: tarea.endDate
-      }
-    } 
-    if(tarea.completed == true){
-      obj = {
-        tittle: tarea.tittle,
-        nombrePropietario: tarea.nombrePropietario,
-        description: tarea.description,
-        completed: false,
-        startDate: tarea.startDate,
-        endDate: tarea.endDate,
-        personId: cliente.id
-      }
+  const observandoComportamiento = async(tarea) => {
+    console.log(tarea)
+    let switchedBoton
+    if (tarea.completed == false) {
+      switchedBoton = trayendoTareas.filter(element => element.id == tarea.id ? tarea.completed = true : null)
+      console.log(switchedBoton)
+    } else {
+      switchedBoton = trayendoTareas.filter(element => element.id == tarea.id ? tarea.completed = false : null)
+      console.log(switchedBoton)
     }
-
-    const respuesta = await fetch(`http://localhost:3001/tasks/${tarea.id}`, {
-      method: 'PUT',
-      body: JSON.stringify(obj),
-      headers: { 'Content-Type': 'application/json' }
-  })
-  await respuesta.json()
-  setTimeout(() => {
-    setLeyendoCambios('1')
-  }, 1500);
- 
-  console.log(respuesta)
-
-
+  
+    switchedBoton = switchedBoton[0]
+   
     setEstado(!estado)
   }
   return (
@@ -59,17 +34,17 @@ const Tarea = ({ tarea, setTareaEditar, setTrayendoTareas, trayendoTareas, setLe
         <span className="font-normal normal-case">{title}</span>
       </p>
       {nombrePropietario ? (
-        <p className="font-bold mb-3 text-gray-700 uppercase">Propietario: {""}
+          <p className="font-bold mb-3 text-gray-700 uppercase">Propietario: {""}
           <span className="font-normal normal-case">{nombrePropietario}</span>
         </p>
-      ) : null}
-
+      ):null}
+    
       <p className="font-bold mb-3 text-gray-700 uppercase">Descripcion: {""}
         <span className="font-normal normal-case">{description}</span>
       </p>
       <p className="font-bold mb-3 text-gray-700 uppercase">fecha de iniciacion: {""}
-        <span className="font-normal normal-case">{startDate}</span>
-      </p>
+          <span className="font-normal normal-case">{startDate}</span>
+        </p>
       {endDate ? (
         <p className="font-bold mb-3 text-gray-700 uppercase">fecha de finalizacion: {""}
           <span className="font-normal normal-case">{endDate}</span>
