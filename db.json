@@ -10,13 +10,13 @@
       "picture": "https://randomuser.me/api/portraits/lego/1.jpg"
     },
     {
+      "id": 2,
       "fullName": "Jane Smith",
-      "nickname": "Jane",
       "age": 27,
-      "gender": "Female",
-      "picture": "https://randomuser.me/api/portraits/lego/2.jpg",
       "occupation": "Doctor",
-      "id": 2
+      "nickname": "Jane",
+      "gender": "Female",
+      "picture": "https://randomuser.me/api/portraits/lego/2.jpg"
     },
     {
       "id": 3,
@@ -64,13 +64,13 @@
       "picture": "https://randomuser.me/api/portraits/lego/7.jpg"
     },
     {
-      "fullName": "Ernesto Perez",
-      "nickname": "yeimmy",
-      "age": 23,
-      "gender": "male",
-      "picture": "https://stickerly.pstatic.net/sticker_pack/j21Xt4LysTuaQt8PF0mgQ/EKHJ91/9/9a903809-988d-4064-a81f-c8efab0d4004.png",
-      "occupation": "frailejon",
-      "id": 8
+      "id": 8,
+      "fullName": "Samantha Taylor",
+      "age": 26,
+      "occupation": "Graphic Designer",
+      "nickname": "Sam",
+      "gender": "Female",
+      "picture": "https://randomuser.me/api/portraits/lego/8.jpg"
     },
     {
       "id": 9,
@@ -89,24 +89,6 @@
       "nickname": "Ash",
       "gender": "Female",
       "picture": "https://randomuser.me/api/portraits/lego/1.jpg"
-    },
-    {
-      "fullName": "olga",
-      "nickname": "sam",
-      "age": 68,
-      "gender": "male",
-      "picture": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2017/07/rick-morty-.jpg?fit=1200%2C675&quality=60&strip=all&ssl=1",
-      "occupation": "frailejon",
-      "id": 11
-    },
-    {
-      "fullName": "Ernesto Perez",
-      "nickname": "silvia",
-      "age": 23,
-      "gender": "Female",
-      "picture": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2017/07/rick-morty-.jpg?fit=1200%2C675&quality=60&strip=all&ssl=1",
-      "occupation": "frailejon",
-      "id": 12
     }
   ],
   "tasks": [
@@ -138,15 +120,13 @@
       "personId": 3
     },
     {
-      "usuarioCreador": 4,
+      "id": 4,
       "title": "Task 4",
-      "nombrePropietario": "Mateo",
       "description": "This is the fourth task on the list.",
+      "completed": true,
       "startDate": "2022-12-04",
-      "completed": false,
       "endDate": "2022-12-06",
-      "personId": 4,
-      "id": 4
+      "personId": 4
     },
     {
       "id": 5,
@@ -176,188 +156,13 @@
       "personId": 7
     },
     {
-      "0": {
-        "id": 1,
-        "title": "Task 1",
-        "description": "This is the first task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 1
-      },
-      "1": {
-        "id": 2,
-        "title": "Task 2",
-        "description": "This is the second task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-05",
-        "personId": 2
-      },
-      "2": {
-        "id": 3,
-        "title": "Task 3",
-        "description": "This is the third task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 3
-      },
-      "3": {
-        "id": 4,
-        "title": "Task 4",
-        "description": "This is the fourth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-06",
-        "personId": 4
-      },
-      "4": {
-        "id": 5,
-        "title": "Task 5",
-        "description": "This is the fifth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 5
-      },
-      "5": {
-        "id": 6,
-        "title": "Task 6",
-        "description": "This is the sixth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-07",
-        "personId": 6
-      },
-      "6": {
-        "id": 7,
-        "title": "Task 7",
-        "description": "This is the seventh task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 7
-      },
-      "7": {
-        "id": 9,
-        "title": "Task 9",
-        "description": "This is the ninth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 9
-      },
-      "8": {
-        "id": 10,
-        "title": "Task 10",
-        "description": "This is the tenth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": null
-      },
-      "9": {
-        "id": 11,
-        "title": "Task 11",
-        "description": "This is the eleventh task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 1
-      },
-      "10": {
-        "id": 12,
-        "title": "Task 12",
-        "description": "This is the twelfth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-05",
-        "personId": 2
-      },
-      "11": {
-        "id": 13,
-        "title": "Task 13",
-        "description": "This is the thirteenth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 3
-      },
-      "12": {
-        "id": 14,
-        "title": "Task 14",
-        "description": "This is the fourteenth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-06",
-        "personId": 4
-      },
-      "13": {
-        "id": 15,
-        "title": "Task 15",
-        "description": "This is the fifteenth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 5
-      },
-      "14": {
-        "id": 16,
-        "title": "Task 16",
-        "description": "This is the sixteenth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 6
-      },
-      "15": {
-        "id": 17,
-        "title": "Task 17",
-        "description": "This is the seventeenth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-05",
-        "personId": 7
-      },
-      "16": {
-        "id": 18,
-        "title": "Task 18",
-        "description": "This is the eighteenth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 8
-      },
-      "17": {
-        "id": 19,
-        "title": "Task 19",
-        "description": "This is the nineteenth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-06",
-        "personId": 9
-      },
-      "18": {
-        "id": 20,
-        "title": "Task 20",
-        "description": "This is the twentieth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 10
-      },
-      "19": {
-        "usuarioCreador": 8,
-        "title": "Señor gatu2",
-        "nombrePropietario": "Leo",
-        "description": "ytut",
-        "startDate": "2022-12-07",
-        "completed": false,
-        "endDate": "2022-12-16",
-        "personId": 8,
-        "id": "k1n1dknhtmlbdzww9l"
-      },
-      "id": 8
+      "id": 8,
+      "title": "Task 8",
+      "description": "This is the eighth task on the list.",
+      "completed": true,
+      "startDate": "2022-12-04",
+      "endDate": "2022-12-08",
+      "personId": 8
     },
     {
       "id": 9,
@@ -440,197 +245,13 @@
       "personId": 7
     },
     {
-      "0": {
-        "id": 1,
-        "title": "Task 1",
-        "description": "This is the first task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 1
-      },
-      "1": {
-        "id": 2,
-        "title": "Task 2",
-        "description": "This is the second task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-05",
-        "personId": 2
-      },
-      "2": {
-        "id": 3,
-        "title": "Task 3",
-        "description": "This is the third task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 3
-      },
-      "3": {
-        "id": 4,
-        "title": "Task 4",
-        "description": "This is the fourth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-06",
-        "personId": 4
-      },
-      "4": {
-        "id": 5,
-        "title": "Task 5",
-        "description": "This is the fifth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 5
-      },
-      "5": {
-        "id": 6,
-        "title": "Task 6",
-        "description": "This is the sixth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-07",
-        "personId": 6
-      },
-      "6": {
-        "id": 7,
-        "title": "Task 7",
-        "description": "This is the seventh task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 7
-      },
-      "7": {
-        "id": 8,
-        "title": "Task 8",
-        "description": "This is the eighth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-08",
-        "personId": 8
-      },
-      "8": {
-        "id": 9,
-        "title": "Task 9",
-        "description": "This is the ninth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 9
-      },
-      "9": {
-        "id": 10,
-        "title": "Task 10",
-        "description": "This is the tenth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": null
-      },
-      "10": {
-        "id": 11,
-        "title": "Task 11",
-        "description": "This is the eleventh task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 1
-      },
-      "11": {
-        "id": 12,
-        "title": "Task 12",
-        "description": "This is the twelfth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-05",
-        "personId": 2
-      },
-      "12": {
-        "id": 13,
-        "title": "Task 13",
-        "description": "This is the thirteenth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 3
-      },
-      "13": {
-        "id": 14,
-        "title": "Task 14",
-        "description": "This is the fourteenth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-06",
-        "personId": 4
-      },
-      "14": {
-        "id": 15,
-        "title": "Task 15",
-        "description": "This is the fifteenth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 5
-      },
-      "15": {
-        "id": 16,
-        "title": "Task 16",
-        "description": "This is the sixteenth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 6
-      },
-      "16": {
-        "id": 17,
-        "title": "Task 17",
-        "description": "This is the seventeenth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-05",
-        "personId": 7
-      },
-      "17": {
-        "id": 18,
-        "title": "Task 18",
-        "description": "This is the eighteenth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 8
-      },
-      "18": {
-        "id": 19,
-        "title": "Task 19",
-        "description": "This is the nineteenth task on the list.",
-        "completed": true,
-        "startDate": "2022-12-04",
-        "endDate": "2022-12-06",
-        "personId": 9
-      },
-      "19": {
-        "id": 20,
-        "title": "Task 20",
-        "description": "This is the twentieth task on the list.",
-        "completed": false,
-        "startDate": "2022-12-04",
-        "endDate": null,
-        "personId": 10
-      },
-      "20": {
-        "usuarioCreador": 8,
-        "title": "Señor gatu2",
-        "nombrePropietario": "Leo",
-        "description": "ytut",
-        "startDate": "2022-12-07",
-        "completed": false,
-        "endDate": "2022-12-16",
-        "personId": 8,
-        "id": "k1n1dknhtmlbdzww9l"
-      },
-      "id": 18
+      "id": 18,
+      "title": "Task 18",
+      "description": "This is the eighteenth task on the list.",
+      "completed": false,
+      "startDate": "2022-12-04",
+      "endDate": null,
+      "personId": 8
     },
     {
       "id": 19,
@@ -649,28 +270,6 @@
       "startDate": "2022-12-04",
       "endDate": null,
       "personId": 10
-    },
-    {
-      "usuarioCreador": 4,
-      "title": "Señor gatu",
-      "nombrePropietario": "Alejandro",
-      "description": "fghfh",
-      "startDate": "2022-12-23",
-      "completed": false,
-      "endDate": "",
-      "personId": 4,
-      "id": "e9a0zaqjjtvlbe0qj97"
-    },
-    {
-      "usuarioCreador": 4,
-      "title": "Señor gatu",
-      "nombrePropietario": "Lucas",
-      "description": "dsfsd",
-      "startDate": "2022-12-16",
-      "completed": false,
-      "endDate": "2022-12-09",
-      "personId": 4,
-      "id": "nyq4p2e71vhlbe0rbqj"
     }
   ]
 }
