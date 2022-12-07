@@ -25,7 +25,7 @@ const Formulario = ({ cliente }) => {
     })
     const onsubmit1 = async (values) => {
         try {
-            if (cliente.id) {
+            if (cliente) {
                 const respuesta = await fetch(`http://localhost:3001/people/${cliente.id}`, {
                     method: 'PUT',
                     body: JSON.stringify(values),
@@ -33,17 +33,29 @@ const Formulario = ({ cliente }) => {
                 })
                 await respuesta.json()
                 router.push(`/verCliente/${cliente.id}`)
+            }else {
+                const respuesta = await fetch(`http://localhost:3001/people`, {
+                    method: 'POST',
+                    body: JSON.stringify(values),
+                    headers: { 'Content-Type': 'application/json' }
+                })
+                await respuesta.json()
+                router.push(`/`)
             }
         } catch (error) {
             console.log(error)
         }
     }
     function cancelar() {
-        router.push(`/verCliente/${cliente.id}`)
+        if(cliente){
+            router.push(`/verCliente/${cliente.id}`)
+        }else {
+            router.push(`/`)
+        }
     }
     return (
         <div className="bg-white mt-10 px-5 py-10 rounded-md shadow-lg shadow-gray-600 md:w-3/4 mx-auto">
-            <h1 className="text-gray-600 font-black text-xl uppercase"> Editar : {cliente.fullName}</h1>
+            {cliente ? ( <h1 className="text-gray-600 font-black text-xl uppercase"> Editar : {cliente.fullName}</h1>) :<h1 className="text-gray-600 font-black text-xl uppercase"> Agregar Cliente</h1> }
             <Formik
                 initialValues={{
                     fullName: cliente?.fullName ?? '',
@@ -88,7 +100,7 @@ const Formulario = ({ cliente }) => {
                                     id="nickname"
                                     type="text"
                                     className="mt-2 block w-full p-3 bg-gray-50"
-                                    placeholder="Nck del Cliente"
+                                    placeholder="Nick del Cliente"
                                     name="nickname"
                                 />
                                 {touched.nickname && errors.nickname ? <Alerta>{errors.nickname}</Alerta> : null}
@@ -116,7 +128,7 @@ const Formulario = ({ cliente }) => {
                                     id="occupation"
                                     type="text"
                                     className="mt-2 block w-full p-3 bg-gray-50 "
-                                    placeholder="Edad del Cliente"
+                                    placeholder="ocupacion del Cliente"
                                     name="occupation"
                                 />
                                 {touched.occupation && errors.occupation ? <Alerta>{errors.occupation}</Alerta> : null}
@@ -151,7 +163,7 @@ const Formulario = ({ cliente }) => {
 
                             <div className="flex">
                                 <div className='flex-initial w-3/4'>
-                                    <input type="submit" value='Editar perfil' className=" mt-5 w-full bg-blue-800  p-3 text-white uppercase font-bold text-lg" />
+                                    <input type="submit" value={cliente ? 'Editar cliente' : 'Agregar Cliente'} className=" mt-5 w-full bg-blue-800  p-3 text-white uppercase font-bold text-lg" />
                                 </div>
                                 <div>
                                     <button onClick={() => cancelar()} className="mt-5 ml-10 flex-initial w-32 bg-red-500  p-3 text-white uppercase font-bold text-lg">cancelar</button>
@@ -163,7 +175,9 @@ const Formulario = ({ cliente }) => {
             </Formik>
         </div>
     )
-
+    Formulario.defaultProps = {
+        cliente: {},
+    }
 
 }
 
