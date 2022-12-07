@@ -138,13 +138,15 @@
       "personId": 3
     },
     {
-      "id": 4,
+      "usuarioCreador": 4,
       "title": "Task 4",
+      "nombrePropietario": "Mateo",
       "description": "This is the fourth task on the list.",
-      "completed": true,
       "startDate": "2022-12-04",
+      "completed": false,
       "endDate": "2022-12-06",
-      "personId": 4
+      "personId": 4,
+      "id": 4
     },
     {
       "id": 5,
@@ -647,6 +649,28 @@
       "startDate": "2022-12-04",
       "endDate": null,
       "personId": 10
+    },
+    {
+      "usuarioCreador": 4,
+      "title": "Señor gatu",
+      "nombrePropietario": "Alejandro",
+      "description": "fghfh",
+      "startDate": "2022-12-23",
+      "completed": false,
+      "endDate": "",
+      "personId": 4,
+      "id": "e9a0zaqjjtvlbe0qj97"
+    },
+    {
+      "usuarioCreador": 4,
+      "title": "Señor gatu",
+      "nombrePropietario": "Lucas",
+      "description": "dsfsd",
+      "startDate": "2022-12-16",
+      "completed": false,
+      "endDate": "2022-12-09",
+      "personId": 4,
+      "id": "nyq4p2e71vhlbe0rbqj"
     }
   ]
 }

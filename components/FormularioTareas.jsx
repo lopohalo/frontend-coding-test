@@ -84,10 +84,10 @@ const router = useRouter()
                 </div>
                 <div className="mb-5">
                     <label htmlFor="propietario" className="block text-gray-700 uppercase font-bold">Persona encargada</label>
-                    <select id="propietario" value={nombrePropietario}  onChange={(e) => setNombrePropietario(e.target.value)}  className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md">
+                    <select id="propietario"  onChange={(e) => setNombrePropietario(e.target.value)}  className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md">
                       {arregloPersonas.map(propietario => (
                         
-                        <option value={propietario}>{propietario}</option>
+                        <option key={propietario} value={propietario}>{propietario}</option>
                       ))
                       }
                     </select>
