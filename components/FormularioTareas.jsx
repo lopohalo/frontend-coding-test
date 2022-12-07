@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { useEffect } from "react"
 import { useRouter } from 'next/router'
-import Alerta from './Alerta'
+import Alerta from "./Alerta"
+
 const FormularioTareas = ({setTrayendoTareas, cliente,tareaEditar,setTareaEditar,setLeyendoCambios}) => {
     const [title, setNombre] = useState('')
     const [startDate, setfecha] = useState('')
@@ -9,7 +10,7 @@ const FormularioTareas = ({setTrayendoTareas, cliente,tareaEditar,setTareaEditar
     const [nombrePropietario, setNombrePropietario] = useState([])
     const [arregloPersonas, setArregloPersonas] = useState(['Hugo','Martín','Lucas','Mateo', 'Leo','Daniel','Alejandro','Pablo'])
     const [description, setdescripcion] = useState('')
-    const [Alerta , setAlerta] = useState(false) 
+    const [Alerta1 , setAlerta] = useState(false) 
 const router = useRouter()
     const HandleSudmit = async (e) => {
         e.preventDefault()
@@ -76,7 +77,7 @@ const router = useRouter()
                 Añade tareas y {""}
                 <span className="text-indigo-600 font-bold">Administralas</span>
             </p>
-            {Alerta && <Alerta children={<p>Todos los Campos son obligatorios</p>} />}
+            {Alerta1 && <Alerta children={<p>Todos los Campos son obligatorios</p>} />}
             <form onSubmit={HandleSudmit} className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
                 <div className="mb-5">
                     <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold">Nombre tarea</label>
