@@ -4,7 +4,7 @@ const Tarea = ({ tarea, setTareaEditar, eliminarAlgoDelArreglo, setTrayendoTarea
   const [estado, setEstado] = useState('No completada')
   const { nombre,
     nombrePropietario,
-    descripcion, completada } = tarea
+    descripcion, completada, fecha } = tarea
 
   const HandleSubmitEliminar = () => {
     const res = confirm('Are you sure you want')
@@ -16,12 +16,12 @@ const Tarea = ({ tarea, setTareaEditar, eliminarAlgoDelArreglo, setTrayendoTarea
   const observandoComportamiento = (tarea) => {
     let switchedBoton
     if (tarea.completada == 'No completada') {
-       switchedBoton = trayendoTareas.filter(element => element.id == tarea.id ? tarea.completada = 'completada' : null)
+      switchedBoton = trayendoTareas.filter(element => element.id == tarea.id ? tarea.completada = 'completada' : null)
     } else {
-       switchedBoton = trayendoTareas.filter(element => element.id == tarea.id ? tarea.completada = 'No completada' : null)
+      switchedBoton = trayendoTareas.filter(element => element.id == tarea.id ? tarea.completada = 'No completada' : null)
     }
-       switchedBoton = switchedBoton[0]
-       let arregloNuevo = trayendoTareas.map(element => element.id == tarea.id ? switchedBoton : element)
+    switchedBoton = switchedBoton[0]
+    let arregloNuevo = trayendoTareas.map(element => element.id == tarea.id ? switchedBoton : element)
     setTrayendoTareas(arregloNuevo)
 
     setEstado(!estado)
@@ -37,6 +37,12 @@ const Tarea = ({ tarea, setTareaEditar, eliminarAlgoDelArreglo, setTrayendoTarea
       <p className="font-bold mb-3 text-gray-700 uppercase">Descripcion: {""}
         <span className="font-normal normal-case">{descripcion}</span>
       </p>
+      {fecha.length > 0 ? (
+        <p className="font-bold mb-3 text-gray-700 uppercase">fecha de finalizacion: {""}
+          <span className="font-normal normal-case">{fecha}</span>
+        </p>
+      ) : null}
+
       <div className="flex justify-between mt-10">
         <button type="button" onClick={() => setTareaEditar(tarea)} className="font-bold text-white bg-indigo-500 hover:bg-indigo-700 uppercase py-2 px-10 rounded-lg">editar</button>
         <div className="switch-button">

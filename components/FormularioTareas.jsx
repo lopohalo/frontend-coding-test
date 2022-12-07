@@ -1,10 +1,12 @@
 import { useState } from "react"
 import { useEffect } from "react"
 import Alerta from './Alerta'
-const FormularioTareas = ({setTrayendoTareas, cliente,tareaEditar}) => {
+const FormularioTareas = ({setTrayendoTareas, cliente,tareaEditar,setTareaEditar}) => {
     const [tareas, setTareas] = useState(localStorage.getItem('tareas') ? JSON.parse(localStorage.getItem('tareas')) : [])
     const [nombre, setNombre] = useState('')
-    const [nombrePropietario, setNombrePropietario] = useState('')
+    const [fecha, setfecha] = useState('')
+    const [nombrePropietario, setNombrePropietario] = useState([])
+    const [arregloPersonas, setArregloPersonas] = useState(['Hugo','Martín','Lucas','Mateo', 'Leo','Daniel','Alejandro','Pablo'])
     const [descripcion, setdescripcion] = useState('')
     const [Alerta , setAlerta] = useState(false) 
 
@@ -28,6 +30,7 @@ const FormularioTareas = ({setTrayendoTareas, cliente,tareaEditar}) => {
             nombre,
             nombrePropietario,
             descripcion,
+            fecha,
             completada: 'No completada'
         }
 
@@ -40,11 +43,12 @@ const FormularioTareas = ({setTrayendoTareas, cliente,tareaEditar}) => {
             objeto_carta.id = generadoraID();
             setTareas([...tareas, objeto_carta])
         }
-      
         setAlerta(false)
         setNombre("")
-        setNombrePropietario("")
+        setNombrePropietario('')
         setdescripcion("")
+        setfecha("")
+        setTareaEditar({})
       
     }
     useEffect(() => {
@@ -52,6 +56,7 @@ const FormularioTareas = ({setTrayendoTareas, cliente,tareaEditar}) => {
             setNombre(tareaEditar.nombre)
             setNombrePropietario(tareaEditar.nombrePropietario)
             setdescripcion(tareaEditar.descripcion)
+            setfecha(tareaEditar.fecha)
         }
     },[tareaEditar])
     return (
@@ -68,8 +73,17 @@ const FormularioTareas = ({setTrayendoTareas, cliente,tareaEditar}) => {
                     <input id="mascota" type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="Nombre Tarea" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"/>
                 </div>
                 <div className="mb-5">
-                    <label htmlFor="propietario" className="block text-gray-700 uppercase font-bold">Nombre Propetiario</label>
-                    <input id="propietario" type="text" value={nombrePropietario} onChange={(e) => setNombrePropietario(e.target.value)} placeholder="Nombre Propetiario" className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"/>
+                    <label htmlFor="propietario" className="block text-gray-700 uppercase font-bold">Persona encargada</label>
+                    <select id="propietario" value={nombrePropietario}   onChange={(e) => setNombrePropietario(e.target.value)}  className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md">
+                      {arregloPersonas.map(propietario => (
+                        <option value={propietario}>{propietario}</option>
+                      ))
+                      }
+                    </select>
+                </div>
+                <div className="mb-5">
+                    <label htmlFor="fecha" className="block text-gray-700 uppercase font-bold">Fecha de finalizacion (opcional)</label>
+                    <input id="fecha" type="date" value={fecha} onChange={(e) => setfecha(e.target.value)}  className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"/>
                 </div>
            
                 <div className="mb-5">
