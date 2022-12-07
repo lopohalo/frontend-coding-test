@@ -64,13 +64,13 @@
       "picture": "https://randomuser.me/api/portraits/lego/7.jpg"
     },
     {
-      "id": 8,
       "fullName": "Samantha Taylor",
-      "age": 26,
-      "occupation": "Graphic Designer",
       "nickname": "Sam",
+      "age": 26,
       "gender": "Female",
-      "picture": "https://randomuser.me/api/portraits/lego/8.jpg"
+      "picture": "https://randomuser.me/api/portraits/lego/8.jpg",
+      "occupation": "Graphic Designer",
+      "id": 8
     },
     {
       "id": 9,
@@ -156,13 +156,14 @@
       "personId": 7
     },
     {
-      "id": 8,
+      "usuarioCreador": 8,
       "title": "Task 8",
       "description": "This is the eighth task on the list.",
-      "completed": true,
       "startDate": "2022-12-04",
-      "endDate": "2022-12-08",
-      "personId": 8
+      "completed": false,
+      "endDate": "2022-12-28",
+      "personId": 8,
+      "id": 8
     },
     {
       "id": 9,

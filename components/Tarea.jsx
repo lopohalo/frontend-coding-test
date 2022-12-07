@@ -57,7 +57,7 @@ const Tarea = ({ tarea, setTareaEditar, setTrayendoTareas, trayendoTareas,setLey
 
           <input type="checkbox" onClick={() => observandoComportamiento(tarea)} name={tarea.id} id={tarea.id} className="switch-button__checkbox" />
           <label htmlFor={tarea.id} className="switch-button__label"></label><br />
-          <h1 className="font-bold">{completed == true ? 'No Completada' : 'Completada'}</h1>
+          <h1 className="font-bold">{completed == true ? 'Completada' : 'No Completada'}</h1>
         </div>
 
         {/* <button type="button" onClick={HandleSubmitEliminar} className="font-bold text-white bg-red-500 hover:bg-red-700 uppercase py-2 px-10 rounded-lg">eliminar</button> */}
