@@ -56,6 +56,7 @@ const ListadoTareas = ({ cliente }) => {
                                         setTrayendoTareas={setTrayendoTareas}
                                         trayendoTareas={trayendoTareas}
                                         setLeyendoCambios={setLeyendoCambios}
+                                        cliente={cliente}
 
                                     />
                                 ))}
