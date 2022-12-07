@@ -91,13 +91,22 @@
       "picture": "https://randomuser.me/api/portraits/lego/1.jpg"
     },
     {
-      "fullName": "Ernesto Perez",
+      "fullName": "olga",
       "nickname": "sam",
-      "age": 19,
-      "gender": "Female",
+      "age": 68,
+      "gender": "male",
       "picture": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2017/07/rick-morty-.jpg?fit=1200%2C675&quality=60&strip=all&ssl=1",
       "occupation": "frailejon",
       "id": 11
+    },
+    {
+      "fullName": "Ernesto Perez",
+      "nickname": "silvia",
+      "age": 23,
+      "gender": "Female",
+      "picture": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2017/07/rick-morty-.jpg?fit=1200%2C675&quality=60&strip=all&ssl=1",
+      "occupation": "frailejon",
+      "id": 12
     }
   ],
   "tasks": [

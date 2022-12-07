@@ -12,7 +12,9 @@ const FormularioTareas = ({setTrayendoTareas, cliente,tareaEditar,setTareaEditar
 
     useEffect(( ) => {
         setTrayendoTareas(tareas)
-        localStorage.setItem('tareas', JSON.stringify(tareas))
+        setTimeout(() => {
+            setTareas(JSON.parse(localStorage.getItem('tareas')))
+        }, 1500);
     },[tareas])
     const HandleSudmit = (e) => {
         e.preventDefault()

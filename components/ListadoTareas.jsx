@@ -15,10 +15,9 @@ const ListadoTareas = ({ cliente }) => {
     }, [trayendoTareas])
 
     const eliminarAlgoDelArreglo = id => {
-        let eliminandoDelArreglo = tareasFiltradas.filter(element => element.id !== id)
-        setTareasFiltradas(eliminandoDelArreglo)
         let eliminandoGlobal = trayendoTareas.filter(element => element.id !== id)
         setTrayendoTareas(eliminandoGlobal)
+        localStorage.setItem('tareas', JSON.stringify(trayendoTareas))
     }
 
     return (
@@ -30,6 +29,7 @@ const ListadoTareas = ({ cliente }) => {
                         setTrayendoTareas={setTrayendoTareas}
                         tareaEditar={tareaEditar}
                         setTareaEditar={setTareaEditar}
+                        trayendoTareas={trayendoTareas}
                     />
                     <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-y-scroll">
                         {tareasFiltradas.length > 0 ?
