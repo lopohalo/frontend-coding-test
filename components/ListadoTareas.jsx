@@ -1,24 +1,35 @@
 import { useEffect, useState } from "react"
 import FormularioTareas from "./FormularioTareas"
 import Tarea from "./Tarea"
-
+import { useRouter } from 'next/router'
 const ListadoTareas = ({ cliente }) => {
-    const [trayendoTareas, setTrayendoTareas] = useState(JSON.parse(localStorage.getItem('tareas')) ?? [])
+    const [leyendoCambios, setLeyendoCambios] = useState('')
+    const [trayendoTareas, setTrayendoTareas] = useState([])
     const [tareasFiltradas, setTareasFiltradas] = useState([])
     const [tareaEditar, setTareaEditar] = useState({})
-
+    useEffect(() => {
+        const trayendoUsuarios = async () => {
+          try {
+            const pidiendoTareas = await fetch('http://localhost:3001/tasks')
+            const respuesta = await pidiendoTareas.json()
+            setTrayendoTareas(respuesta)
+          } catch (error) {
+            console.log(error)
+          }
+        }
+        trayendoUsuarios()
+      }, [leyendoCambios])
 
     useEffect(() => {
-        let filtro = trayendoTareas.filter(element => element.usuarioCreador == cliente.id)
+        let filtro = trayendoTareas.filter(element => element.personId == cliente.id)
         setTareasFiltradas(filtro)
-        localStorage.setItem('tareas', JSON.stringify(trayendoTareas))
-    }, [trayendoTareas])
+    }, [leyendoCambios,trayendoTareas])
 
-    const eliminarAlgoDelArreglo = id => {
-        let eliminandoGlobal = trayendoTareas.filter(element => element.id !== id)
-        setTrayendoTareas(eliminandoGlobal)
-        localStorage.setItem('tareas', JSON.stringify(trayendoTareas))
-    }
+    // const eliminarAlgoDelArreglo = id => {
+    //     let eliminandoGlobal = trayendoTareas.filter(element => element.id !== id)
+    //     setTrayendoTareas(eliminandoGlobal)
+    //     localStorage.setItem('tareas', JSON.stringify(trayendoTareas))
+    
 
     return (
         <>
@@ -30,6 +41,7 @@ const ListadoTareas = ({ cliente }) => {
                         tareaEditar={tareaEditar}
                         setTareaEditar={setTareaEditar}
                         trayendoTareas={trayendoTareas}
+                        setLeyendoCambios={setLeyendoCambios}
                     />
                     <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-y-scroll">
                         {tareasFiltradas.length > 0 ?
@@ -41,9 +53,9 @@ const ListadoTareas = ({ cliente }) => {
                                         key={tarea.id}
                                         tarea={tarea}
                                         setTareaEditar={setTareaEditar}
-                                        eliminarAlgoDelArreglo={eliminarAlgoDelArreglo}
                                         setTrayendoTareas={setTrayendoTareas}
                                         trayendoTareas={trayendoTareas}
+                                        setLeyendoCambios={setLeyendoCambios}
 
                                     />
                                 ))}
@@ -63,5 +75,5 @@ const ListadoTareas = ({ cliente }) => {
 
         </>
     )
-}
+                    }
 export default ListadoTareas
