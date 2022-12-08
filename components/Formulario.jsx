@@ -32,7 +32,7 @@ const Formulario = ({ cliente }) => {
                     headers: { 'Content-Type': 'application/json' }
                 })
                 await respuesta.json()
-                router.push(`/verCliente/${cliente.id}`)
+                router.push(`/profile/${cliente.id}`)
             }else {
                 const respuesta = await fetch(`http://localhost:3001/people`, {
                     method: 'POST',
@@ -48,7 +48,7 @@ const Formulario = ({ cliente }) => {
     }
     function cancelar() {
         if(cliente){
-            router.push(`/verCliente/${cliente.id}`)
+            router.push(`/profile/${cliente.id}`)
         }else {
             router.push(`/`)
         }

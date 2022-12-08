@@ -28,13 +28,13 @@
       "picture": "https://randomuser.me/api/portraits/lego/3.jpg"
     },
     {
-      "id": 4,
       "fullName": "Alice Williams",
-      "age": 29,
-      "occupation": "Lawyer",
       "nickname": "Ali",
-      "gender": "Female",
-      "picture": "https://randomuser.me/api/portraits/lego/4.jpg"
+      "age": 29,
+      "gender": "fff",
+      "picture": "https://randomuser.me/api/portraits/lego/4.jpg",
+      "occupation": "aaa",
+      "id": 4
     },
     {
       "id": 5,
@@ -156,8 +156,8 @@
       "personId": 7
     },
     {
-      "usuarioCreador": 8,
       "title": "Task 8",
+      "nombrePropietario": "Alejandro",
       "description": "This is the eighth task on the list.",
       "startDate": "2022-12-04",
       "completed": false,
@@ -210,13 +210,14 @@
       "personId": 3
     },
     {
-      "id": 14,
+      "usuarioCreador": 4,
       "title": "Task 14",
-      "description": "This is the fourteenth task on the list.",
-      "completed": true,
+      "description": "This is the fourteenth task on the listdfsdfsd",
       "startDate": "2022-12-04",
+      "completed": false,
       "endDate": "2022-12-06",
-      "personId": 4
+      "personId": 4,
+      "id": 14
     },
     {
       "id": 15,

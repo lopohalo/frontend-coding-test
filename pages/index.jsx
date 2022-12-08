@@ -25,7 +25,7 @@ function HomePage() {
       <h1 className="font-black text-4xl ml-10 mt-5  text-blue-900">Clientes</h1>
       <p className="mt-5 ml-10 ">Administra  tus clientes</p>
       <div className="bg-blue-600 hover:bg-blue-700 block w-32 mb-3 text-white rounded-md text-center m-auto   p-2 uppercase font-bold text-lg">
-          <Link href="/nuevoCliente"  type="button" > Agregar Usuario</Link>
+      <Link href="/profile/new" type="button" > Agregar Cliente</Link>
         </div>
       <table className="w-full mt-5 table-auto shadow bg-white">
         <thead className="bg-blue-800 text-white">

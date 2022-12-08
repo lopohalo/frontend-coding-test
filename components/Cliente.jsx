@@ -16,7 +16,7 @@ const Cliente = ({ cliente }) => {
       <td className="p-3 text-center">{occupation}</td>
       <td className="p-3 text-center">
         <div className="bg-blue-600 hover:bg-blue-700 block w-1/2 mb-3 text-white  p-2 uppercase font-bold text-lg">
-          <Link href="/verCliente/[id]" as={`/verCliente/${id}`} type="button" > Ver</Link>
+          <Link href="/profile/[id]" as={`/profile/${id}`} type="button" > Ver</Link>
         </div>
       </td>
     </tr>

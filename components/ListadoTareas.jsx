@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
-import FormularioTareas from "./FormularioTareas"
 import Tarea from "./Tarea"
-import { useRouter } from 'next/router'
+
 const ListadoTareas = ({ cliente }) => {
     const [leyendoCambios, setLeyendoCambios] = useState('')
     const [trayendoTareas, setTrayendoTareas] = useState([])
@@ -33,17 +32,8 @@ const ListadoTareas = ({ cliente }) => {
 
     return (
         <>
-            <div className="container mx-auto mt-20">
-                <div className="mt-12 md:flex">
-                    <FormularioTareas
-                        cliente={cliente}
-                        setTrayendoTareas={setTrayendoTareas}
-                        tareaEditar={tareaEditar}
-                        setTareaEditar={setTareaEditar}
-                        trayendoTareas={trayendoTareas}
-                        setLeyendoCambios={setLeyendoCambios}
-                    />
-                    <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-y-scroll">
+            <div className="container mx-auto mt-10">
+                    <div className="md:w-full lg:w-full md:h-screen overflow-y-scroll">
                         {tareasFiltradas.length > 0 ?
                             <>
                                 <h2 className="font-black text-3xl text-center">Listado de tareas</h2>
@@ -71,7 +61,6 @@ const ListadoTareas = ({ cliente }) => {
 
                     </div>
                 </div>
-            </div>
 
         </>
     )
