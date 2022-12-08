@@ -89,6 +89,15 @@
       "nickname": "Ash",
       "gender": "Female",
       "picture": "https://randomuser.me/api/portraits/lego/1.jpg"
+    },
+    {
+      "fullName": "Ernesto Perez",
+      "nickname": "sam",
+      "age": 21,
+      "gender": "Female",
+      "picture": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2017/07/rick-morty-.jpg?fit=1200%2C675&quality=60&strip=all&ssl=1",
+      "occupation": "frailejon",
+      "id": 11
     }
   ],
   "tasks": [
