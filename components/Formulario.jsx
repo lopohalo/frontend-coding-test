@@ -54,6 +54,8 @@ const Formulario = ({ cliente }) => {
         }
     }
     return (
+        
+
         <div className="bg-white mt-10 px-5 py-10 rounded-md shadow-lg shadow-gray-600 md:w-3/4 mx-auto">
             {cliente ? ( <h1 className="text-gray-600 font-black text-xl uppercase"> Editar : {cliente.fullName}</h1>) :<h1 className="text-gray-600 font-black text-xl uppercase"> Agregar Cliente</h1> }
             <Formik

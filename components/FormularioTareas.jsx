@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import Alerta from "./Alerta"
 
 const FormularioTareas = ({ tarea,setTarea }) => {
+
     const [cliente, setCliente] = useState({})
     const [title, setNombre] = useState('')
     const [startDate, setfecha] = useState('')
@@ -115,7 +116,7 @@ const FormularioTareas = ({ tarea,setTarea }) => {
                     <label htmlFor="descripcion" className="block text-gray-700 uppercase font-bold">Descripcion</label>
                     <textarea className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" id="descripcion" value={description} onChange={(e) => setdescripcion(e.target.value)} placeholder="ej. Realizacion de un carrito..."></textarea>
                 </div>
-                <input type="submit" className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-800 transition-all" value={tarea == {} ? "Agregar tarea" : "Editar tarea" } />
+                <input type="submit" className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-800 transition-all" value={Object.keys(tarea).length === 0 ? "Agregar tarea" : "Editar tarea" } />
             </form>
         </div>
     )
