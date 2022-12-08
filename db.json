@@ -159,8 +159,8 @@
       "title": "Task 8",
       "nombrePropietario": "Alejandro",
       "description": "This is the eighth task on the list.",
+      "completed": true,
       "startDate": "2022-12-04",
-      "completed": false,
       "endDate": "2022-12-28",
       "personId": 8,
       "id": 8
@@ -247,13 +247,13 @@
       "personId": 7
     },
     {
-      "id": 18,
       "title": "Task 18",
       "description": "This is the eighteenth task on the list.",
-      "completed": false,
+      "completed": true,
       "startDate": "2022-12-04",
       "endDate": null,
-      "personId": 8
+      "personId": 8,
+      "id": 18
     },
     {
       "id": 19,

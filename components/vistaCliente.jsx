@@ -33,14 +33,19 @@ const VistaCliente = () => {
             <div>
                 {cargando ? <h1> cargando....</h1> : (
                     <>
-                        <div className="inline-flex items-center m-8 px-1 py-1 text-lg font-medium text-center text-white bg-orange-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-orange-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <div className="inline-flex items-center ml-8 px-1 py-1 text-lg font-medium text-center mt-10 text-white bg-orange-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-orange-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             <Link href="/">
                                 Atras
                             </Link>
                         </div>
-                        <div className="container mx-auto mt-10">
-                            <div className="mt-5 md:flex">
+                        <div className="container m-auto">
+                        <div className='text-start ml-60'>
+         <h1 className="font-black text-4xl text-blue-900 m-6">Perfil</h1>
+         </div>
+                            <div className="md:flex">
+          
                                 <div className="max-w-sm m-auto mt-10  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-black dark:border-gray-800">
+                                    
                                     <a href="#">
                                         <img className="rounded-t-lg w-3/4 m-auto p-3" src={cliente.picture} alt="" />
                                     </a>
@@ -64,7 +69,7 @@ const VistaCliente = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-y-scroll">
+                                <div className="md:w-1/2 lg:w-3/5">
                                     <ListadoTareas
                                         cliente={cliente}
                                     />

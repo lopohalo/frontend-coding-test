@@ -1,27 +1,52 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useRouter } from 'next/router'
 import Link from "next/link"
-const Tarea = ({ tarea, setTareaEditar, setTrayendoTareas, trayendoTareas,setLeyendoCambios }) => {
+const Tarea = ({tarea,setLeyendoCambios, cliente}) => {
   const [estado, setEstado] = useState('No completada')
+  const [cambiando, setCambiando] = useState('')
   const { title,
     nombrePropietario,
     description, completed, startDate,endDate } = tarea
 
-
   const router = useRouter()
-  const observandoComportamiento = async(tarea) => {
-    console.log(tarea)
-    let switchedBoton
-    if (tarea.completed == false) {
-      switchedBoton = trayendoTareas.filter(element => element.id == tarea.id ? tarea.completed = true : null)
-      console.log(switchedBoton)
+
+  useEffect(() => {
+    setLeyendoCambios(cambiando)
+  },[cambiando])
+  const observandoComportamiento = async(tarea1) => { 
+    console.log(tarea.completed)
+    let obj
+    if(tarea.completed == false){
+      obj = {
+        title: tarea1.title,
+        nombrePropietario: tarea1.nombrePropietario,
+        description: tarea1.description,
+        completed:  true ,
+        startDate: tarea1.startDate,
+        endDate: tarea1.endDate,
+        personId:  cliente.id
+      }
     } else {
-      switchedBoton = trayendoTareas.filter(element => element.id == tarea.id ? tarea.completed = false : null)
-      console.log(switchedBoton)
+       obj = {
+        title: tarea1.title,
+        nombrePropietario: tarea1.nombrePropietario,
+        description: tarea1.description,
+        completed: false ,
+        startDate: tarea1.startDate,
+        endDate: tarea1.endDate,
+        personId:  cliente.id
+      }
+    
     }
-  
-    switchedBoton = switchedBoton[0]
+    const respuesta = await fetch(`http://localhost:3001/tasks/${tarea1.id}`, {
+      method: 'PUT',
+      body: JSON.stringify(obj),
+      headers: { 'Content-Type': 'application/json' }
+  })
+  await respuesta.json()
+  setCambiando(respuesta)
    
+console.log(obj)   
     setEstado(!estado)
   }
   return (
@@ -54,11 +79,15 @@ const Tarea = ({ tarea, setTareaEditar, setTrayendoTareas, trayendoTareas,setLey
                                     </Link>
                                     <svg aria-hidden="true" className="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                                 </div>
-        <div className="switch-button">
-
+                                <div>
+             <h1 className="font-bold">{completed == true ? 'Completada': <p className="text-sm">No Completada</p>}</h1>
+          </div>
+        <div className={completed == true ? "switch-button bg-green" : "switch-button bg-orange"}>
+          
+       
           <input type="checkbox" onClick={() => observandoComportamiento(tarea)} name={tarea.id} id={tarea.id} className="switch-button__checkbox" />
           <label htmlFor={tarea.id} className="switch-button__label"></label><br />
-          <h1 className="font-bold">{completed == true ? 'Completada' : 'No Completada'}</h1>
+        
         </div>
 
         {/* <button type="button" onClick={HandleSubmitEliminar} className="font-bold text-white bg-red-500 hover:bg-red-700 uppercase py-2 px-10 rounded-lg">eliminar</button> */}

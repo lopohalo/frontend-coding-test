@@ -49,6 +49,7 @@ const FormularioTareas = ({ tarea,setTarea }) => {
                 headers: { 'Content-Type': 'application/json' }
             })
             await respuesta.json()
+            setTarea({})
         } else {
             objeto_carta.id = generadoraID();
             const respuesta = await fetch(`http://localhost:3001/tasks`, {
@@ -65,7 +66,7 @@ const FormularioTareas = ({ tarea,setTarea }) => {
         setdescripcion("")
         setfecha("")
         setendDate('')
-        setTarea({})
+     
         router.push(`/profile/${cliente.id}`)
 
     }
@@ -114,9 +115,12 @@ const FormularioTareas = ({ tarea,setTarea }) => {
                     <label htmlFor="descripcion" className="block text-gray-700 uppercase font-bold">Descripcion</label>
                     <textarea className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md" id="descripcion" value={description} onChange={(e) => setdescripcion(e.target.value)} placeholder="ej. Realizacion de un carrito..."></textarea>
                 </div>
-                <input type="submit" className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-800 transition-all" value={tarea.id ? "Editar tarea" : "Agregar Tarea"} />
+                <input type="submit" className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-800 transition-all" value={tarea == {} ? "Agregar tarea" : "Editar tarea" } />
             </form>
         </div>
     )
+}
+FormularioTareas.defaultProps = {
+    tarea: {},
 }
 export default FormularioTareas
