@@ -80,14 +80,13 @@ console.log(obj)
                                     <svg aria-hidden="true" className="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                                 </div>
                                 <div>
-             <h1 className="font-bold">{completed == true ? 'Completada': <p className="text-sm">No Completada</p>}</h1>
-          </div>
-        <div className={completed == true ? "switch-button bg-green" : "switch-button bg-orange"}>
           
+          </div>
+        <div className={completed == true ? "switch-button-true" : "switch-button-false"}>
+        <h1 className="font-bold">{completed == true ? 'Completada': <p className="text-sm">No Completada</p>}</h1>
        
           <input type="checkbox" onClick={() => observandoComportamiento(tarea)} name={tarea.id} id={tarea.id} className="switch-button__checkbox" />
-          <label htmlFor={tarea.id} className="switch-button__label"></label><br />
-        
+          <label htmlFor={tarea.id} className="switch-button__label"><img width={100} src={completed == true ? 'https://img2.freepng.es/20180627/cqp/kisspng-check-mark-computer-icons-icon-design-clip-art-complete-5b335dfeda5438.5302957515300930548943.jpg': 'https://cdn.pixabay.com/photo/2016/01/20/18/35/x-1152114_1280.png'} alt="" /></label><br />
         </div>
 
         {/* <button type="button" onClick={HandleSubmitEliminar} className="font-bold text-white bg-red-500 hover:bg-red-700 uppercase py-2 px-10 rounded-lg">eliminar</button> */}
