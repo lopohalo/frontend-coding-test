@@ -9,7 +9,7 @@ const FormularioTareas = ({ tarea,setTarea }) => {
     const [title, setNombre] = useState('')
     const [startDate, setfecha] = useState('')
     const [endDate, setendDate] = useState('')
-    const [nombrePropietario, setNombrePropietario] = useState([])
+    const [nombrePropietario, setNombrePropietario] = useState('')
     const [arregloPersonas, setArregloPersonas] = useState(['Hugo', 'Martín', 'Lucas', 'Mateo', 'Leo', 'Daniel', 'Alejandro', 'Pablo'])
     const [description, setdescripcion] = useState('')
     const [Alerta1, setAlerta] = useState(false)
@@ -96,6 +96,7 @@ const FormularioTareas = ({ tarea,setTarea }) => {
                 <div className="mb-5">
                     <label htmlFor="propietario" className="block text-gray-700 uppercase font-bold">Persona encargada</label>
                     <select id="propietario" onChange={(e) => setNombrePropietario(e.target.value)} className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md">
+                        <option value="">Selecione---</option>
                         {arregloPersonas.map(propietario => (
 
                             <option key={propietario} value={propietario}>{propietario}</option>
